@@ -37,7 +37,7 @@ function Cadastro() {
                   <StyledInput type="text" placeholder="Digite seu cargo" />
                   <h2>Senha:</h2>
                   <StyledInput type="password" placeholder="Digite sua senha" />
-                  <StyledButton className="loginBtn" >Entrar</StyledButton>
+                  <StyledButton className="loginBtn" >Cadastro</StyledButton>
                 </StyledForm>
               
               </div>

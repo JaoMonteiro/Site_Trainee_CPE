@@ -22,7 +22,7 @@ export const StyledInput = styled.input` //Area de texto
 export const StyledButton = styled.button` //Botao de Autenticação
     padding: 0.5rem 1rem;
     height:40px;
-    width:80px;
+    width:100px;
     margin-inline:auto;
     font-size: 1rem;
     font-family:'Sansation Light';

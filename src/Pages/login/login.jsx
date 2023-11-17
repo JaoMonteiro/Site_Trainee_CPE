@@ -7,12 +7,16 @@ import Nota4 from "../../assets/Nota 4.svg";
 import Arpa from "../../assets/Arpa.svg";
 import { useState } from "react";
 import api from "../../services/Api";
+import useAuthStore from "../../stores/auth";
 
 
 
 function Login () {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const token = useAuthStore((state) => state.token);
+  const usuario = useAuthStore((state) => state.usuario);
+  const setToken = useAuthStore((state) => state.setToken);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,10 +24,12 @@ function Login () {
 
     try {
       const res = api.post("/login", {email, senha});
-      console.log(res.data);
+      const { token } = res.data;
+      setToken(token);
+
     } catch (erro) {
       console.error(erro);
-      alert(erro.message);
+      alert(erro.response.data.message);
     }
 
   };
